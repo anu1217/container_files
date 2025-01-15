@@ -1,0 +1,8 @@
+FROM ubuntu:16.04
+
+RUN apt-get -y --force-yes update
+RUN apt-get install -y --force-yes \
+    software-properties-common python-software-properties sudo wget
+
+RUN apt-get -y --force-yes update
+

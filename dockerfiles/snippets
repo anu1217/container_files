@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+RUN apt update \
+    # Dependencies.
+    && apt -y install python3 python3-pip \
+    && pip3 install -U \
+        numpy \
+        scipy \
+        matplotlib \
+    # Install pytest.
+    && pip3 install -U pytest
