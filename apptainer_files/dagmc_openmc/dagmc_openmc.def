@@ -2,11 +2,12 @@ Bootstrap: localimage
 From: /software/chtc/containers/ubuntu/22.04/openmpi-4.1.6_gcc-11.3.0.sif
 
 %arguments
-    HDF5_VERSION=hdf5_1_14_3
-    MOAB_VERSION=5.3.0
-    DOUBLE_DOWN_VERSION=v1.0.0
+    HDF5_URL=https://support.hdfgroup.org/releases/hdf5/v1_14/v1_14_3/downloads/hdf5-1.14.3.tar.gz
+    HDF5_TAR=hdf5-1.14.3.tar.gz
+    MOAB_VERSION=5.5.1
+    DOUBLE_DOWN_VERSION=v1.1.0
     EMBREE_VERSION=v3.12.2
-    DAGMC_VERSION=v3.2.1
+    DAGMC_VERSION=v3.2.4
     BUILD_DIR=/root/build
     EMBREE_INSTALL_DIR=/opt/Embree
     HDF5_INSTALL_DIR=/opt/hdf5
@@ -47,8 +48,8 @@ From: /software/chtc/containers/ubuntu/22.04/openmpi-4.1.6_gcc-11.3.0.sif
 
     # Build HDF5
     mkdir -p {{BUILD_DIR}}/hdf5 && cd {{BUILD_DIR}}/hdf5
-    wget https://support.hdfgroup.org/releases/hdf5/v1_14/v1_14_3/downloads/hdf5-1.14.3.tar.gz
-    tar -xvf hdf5-1.14.3.tar.gz
+    wget {{HDF5_URL}}
+    tar -xvf {{HDF5_TAR}}
     cd hdfsrc
     ./configure --prefix={{HDF5_INSTALL_DIR}} \
                 --enable-optimization=high --enable-shared \
