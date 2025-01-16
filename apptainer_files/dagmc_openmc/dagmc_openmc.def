@@ -6,7 +6,7 @@ From: /software/chtc/containers/ubuntu/22.04/openmpi-4.1.6_gcc-11.3.0.sif
     HDF5_TAR=hdf5-1.14.3.tar.gz
     MOAB_VERSION=5.5.1
     DOUBLE_DOWN_VERSION=v1.1.0
-    EMBREE_VERSION=v3.12.2
+    EMBREE_VERSION=v4.3.3
     DAGMC_VERSION=v3.2.4
     BUILD_DIR=/root/build
     EMBREE_INSTALL_DIR=/opt/Embree
