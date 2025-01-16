@@ -17,7 +17,6 @@ container_name=dagmc_openmc
 
 apptainer build \
         --bind $TMPDIR:/tmp \
-        "${@:2}" \
         ${container_name}.sif ${container_name}.def
 
 rm -rf $JOB_TMP_PATH
