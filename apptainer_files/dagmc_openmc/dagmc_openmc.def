@@ -42,8 +42,8 @@ From: /software/chtc/containers/ubuntu/22.04/openmpi-4.1.6_gcc-11.3.0.sif
         libpython3-dev \
         zlib1g-dev \
         libeigen3-dev \
-		libpng-dev \
-		libnetcdf-dev \
+        libpng-dev \
+        libnetcdf-dev \
         curl
 
     # Build HDF5
