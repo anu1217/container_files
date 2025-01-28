@@ -7,6 +7,7 @@
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
 
+# this is correct for UW HPC, it may vary on different clusters
 export JOB_TMP_PATH=/local/$USER/${SLURM_JOB_ID}
 export TMPDIR=$JOB_TMP_PATH/tmp
 export APPTAINER_TMPDIR=$JOB_TMP_PATH/apptainer

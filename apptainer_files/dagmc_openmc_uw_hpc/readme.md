@@ -5,4 +5,6 @@ To build the image, run
 
 `sbatch build_image.sh`
 
+On the UW HPC cluster.
+
 This will build the image using `dagmc_openmc.def` and place the finished image `dagmc_openmc.sif` in this directory. That image can then be used to run future jobs. See the top level readme for how to run a job with an Apptainer image.

@@ -1,4 +1,8 @@
 Bootstrap: localimage
+# This is an image provided by chtc that has a version of openmpi that will
+# play nicely with SLURM. On another cluster, a base image with a version
+# of openmpi appropriate for that cluster should be sufficient for this 
+# image to work there.
 From: /software/chtc/containers/ubuntu/22.04/openmpi-4.1.6_gcc-11.3.0.sif
 
 %arguments
