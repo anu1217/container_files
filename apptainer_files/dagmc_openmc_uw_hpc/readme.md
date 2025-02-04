@@ -8,3 +8,5 @@ To build the image, run
 On the UW HPC cluster.
 
 This will build the image using `dagmc_openmc.def` and place the finished image `dagmc_openmc.sif` in this directory. That image can then be used to run future jobs. See the top level readme for how to run a job with an Apptainer image.
+
+For details on the UW HPC cluster, see their [webpage](https://chtc.cs.wisc.edu/uw-research-computing/hpc-overview).
