@@ -2,7 +2,7 @@
 #SBATCH --partition=pre
 #SBATCH --time=0-04:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=32
 #SBATCH --mem-per-cpu=4000
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
@@ -14,10 +14,11 @@ export APPTAINER_TMPDIR=$JOB_TMP_PATH/apptainer
 mkdir -p $TMPDIR
 mkdir -p $APPTAINER_TMPDIR
 
-container_name=dagmc_openmc
+definition_file=dagmc_openmc.def
+container_name=dagmc_openmc.sif
 
 apptainer build \
         --bind $TMPDIR:/tmp \
-        ${container_name}.sif ${container_name}.def
+        ${container_name} ${definition_file}
 
 rm -rf $JOB_TMP_PATH

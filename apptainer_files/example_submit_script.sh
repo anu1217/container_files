@@ -1,12 +1,13 @@
 #!/bin/bash
-#SBATCH --partition=pre       # default "shared", if not specified
-#SBATCH --time=0-24:00:00       # run time in days-hh:mm:ss
-#SBATCH --nodes=10               # require 1 nodes
-#SBATCH --ntasks-per-node=32   # cpus per node (by default, "ntasks"="cpus")
+#SBATCH --partition=shared
+#SBATCH --time=0-24:00:00            
+#SBATCH --nodes=10               
+#SBATCH --ntasks-per-node=32   
 #SBATCH --mem=30000
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
 
+# load required modules here
 module load openmpi
 # image_path is the path to the Apptainer .sif file you wish to use
 export image_path=/path/to/apptainer/image
