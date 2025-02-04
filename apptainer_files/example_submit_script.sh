@@ -16,8 +16,10 @@ export image_path=/path/to/apptainer/image
 # otherwise specified.
 bind_path=/path/to/bind
 
-# This tells slurm to use the apptainer image specified above, along with the
-# the bind path to execute the contents of my_executable.sh. You can also
-# just type bash commands rather than keeping them in a script, e.g.
-# replace my_executable.sh with openmc model.xml
-srun --mpi=pmix -n $SLURM_NNODES apptainer exec --bind ${bind_path}:${bind_path} ${image_path} my_executable.sh
+# Launches the command MY_COMMAND in parallel with SLURM_NNODES MPI processes
+# inside the above apptainer image while mounting the bind_path into the image
+# Note that MY_COMMAND may need a flag for thread parallelization to take advantage of the 
+# number of tasks per node specified
+srun --mpi=pmix -n ${SLURM_NNODES} apptainer exec --bind ${bind_path}:${bind_path} ${image_path} MY_COMMAND
+
+# alternatively, you can replace MY_COMMAND with a bash script (e.g. my_commands.sh) if you need to run multiple commands in sequence
