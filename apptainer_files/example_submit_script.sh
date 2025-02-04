@@ -11,7 +11,7 @@ module load openmpi
 # image_path is the path to the Apptainer .sif file you wish to use
 export image_path=/path/to/apptainer/image
 
-# the bind path is effectively the working directory used by the image.
+# mounts the `bind_path` location on the system into the image 
 # input files can be stored here, and output files are written here, unless
 # otherwise specified.
 bind_path=/path/to/bind
